@@ -24,7 +24,7 @@ env::set_var("RUST_LOG", "debug");
 				tcp_server::serve(address).unwrap_or_else(|e|error!("{}",e));
 			}
 			"client"=>{
-				//TODO
+				tcp_client::connect(address).unwrap_or_else(|e|error!("{}",e));
 			}
 			_=>{
 				missing_role();
