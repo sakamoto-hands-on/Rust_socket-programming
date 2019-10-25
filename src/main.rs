@@ -32,7 +32,8 @@ env::set_var("RUST_LOG", "debug");
 		},
 		"udp"=>match role{
 			"server"=>{
-				//TODO
+				udp_server::serve(address).unwrap_or_else(|e|error!("{}",e));
+
 			}
 			"client"=>{
 				//TODO
